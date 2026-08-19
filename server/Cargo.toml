@@ -1,0 +1,33 @@
+[package]
+name = "light-scrap-vidz-server"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+name = "light_scrap_vidz_server"
+path = "src/lib.rs"
+
+[[bin]]
+name = "light-scrap-vidz-server"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.7", features = ["ws"] }
+tokio = { version = "1", features = ["full"] }
+tower-http = { version = "0.6", features = ["fs", "cors"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+uuid = { version = "1", features = ["v4"] }
+futures-util = "0.3"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+tempfile = "3"
+http-body-util = "0.1"
+
+[profile.release]
+lto = true
+opt-level = "s"
+codegen-units = 1
+strip = true

@@ -1,0 +1,24 @@
+# Rust server
+server/target/
+
+# Expo / React Native app
+app/node_modules/
+app/.expo/
+app/dist/
+app/web-build/
+app/*.log
+app/.expo-shared/
+
+# Native build output
+app/android/
+app/ios/
+app/light-scrap-vidz.apk
+
+# Test / coverage
+app/coverage/
+
+# Env / misc
+.DS_Store
+*.local
+npm-debug.*
+yarn-error.*
