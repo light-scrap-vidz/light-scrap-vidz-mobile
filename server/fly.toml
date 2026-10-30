@@ -1,0 +1,19 @@
+# Before the first deploy:  fly secrets set AUTH_TOKEN=<a long random string>
+# The mobile app's Settings asks for the same token.
+app = "light-scrap-vidz"
+primary_region = "cdg"
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  min_machines_running = 1
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
